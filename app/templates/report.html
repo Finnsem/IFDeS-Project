@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Suspicious Activity or Fraud - IFDeS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rep.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <div class="contact-content__title">
+        <h1>Report</h1>
+    </div>
+
+    <div class="container">
+        <p>Report Suspicious Activity or Fraud</p>
+        <div class="mkn">
+            <form action="{{ url_for('main.report_suspicious_activity') }}" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="platform_name">Platform Name</label>
+                        <input type="text" id="platform_name" name="platform_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity_type">Activity Type</label>
+                        <select id="activity_type" name="activity_type" class="form-control" required>
+                            <option value="Fraud">Fraud</option>
+                            <option value="Suspicious Activity">Suspicious Activity</option>
+                            <option value="Ponzi Scam activity">Ponzi Scam activity</option>
+                        
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description of the Activity</label>
+                    <textarea id="description" name="description" rows="5" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="reporter_email">Your Email</label>
+                    <input type="email" id="reporter_email" name="reporter_email" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

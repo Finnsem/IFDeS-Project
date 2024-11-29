@@ -1,0 +1,151 @@
+.kotak {
+    height: 90vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.container {
+    width: 100vw;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+
+/* Toggle buttons styling */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px 8px 0 0;
+}
+
+.toggle-btn.active {
+    background-color: #00152c;
+    color: #ffffff;
+}
+
+/* Form styling */
+.form-container {
+    display: none; /* Hidden by default */
+}
+
+.form-container.active {
+    display: block; /* Displayed when active */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #001a36;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #001d3b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #003874;
+}
+
+.logo{
+    width: 50%;
+    padding-bottom: 30px;
+}
+
+
+/* Flash message container styling */
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    width: 300px;
+    z-index: 1000;
+}
+
+/* Flash message box styling */
+.flash-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    animation: slideIn 0.5s ease-out, fadeOut 0.5s 3s ease forwards;
+}
+
+/* Success, error, warning, info color variations */
+.flash-message.success { background-color: #28a745; }
+.flash-message.danger { background-color: #dc3545; }
+.flash-message.warning { background-color: #ffc107; color: #212529; }
+.flash-message.info { background-color: #17a2b8; }
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}

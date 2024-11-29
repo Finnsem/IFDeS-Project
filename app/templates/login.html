@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - IFDeS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+    <div class="kotak">
+   
+    <div class="container">
+        <img class="logo" src="{{ url_for('static', filename='images/logo-dark.png') }}" alt="IFDeS Logo">
+        <div class="toggle-container">
+            <button class="toggle-btn active" id="loginToggle">Login</button>
+            <button class="toggle-btn" id="registerToggle">Register</button>
+        </div>
+    
+        <!-- Login Form -->
+        <div class="form-container active" id="loginForm">
+            
+            <h2>Login</h2>
+            
+            <form method="POST" action="{{ url_for('auth.login') }}">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-container" id="registerForm" style="display: none;">
+          
+            <h2>Register</h2>
+            <form method="POST" action="{{ url_for('auth.register') }}">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="{{ url_for('static', filename='js/toggle.js') }}"></script>
+
+ 
+
+
+
+</body>
+
+
+</html>

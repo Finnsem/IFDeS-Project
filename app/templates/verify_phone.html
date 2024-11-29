@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Get Contact Details</h1>
+    <form id="contactForm">
+        <div class="mb-3">
+            <label for="contactPhoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="contactPhoneNumber" placeholder="Enter phone number" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Contact Details</button>
+    </form>
+
+    <div id="contactResults" class="mt-4">
+        <h3>Contact Details</h3>
+        <pre id="contactOutput" class="p-3 border rounded bg-light"></pre>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const phoneNumber = document.getElementById('contactPhoneNumber').value;
+
+        try {
+            const response = await fetch('/get-contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phone_number: phoneNumber })
+            });
+
+            if (!response.ok) {
+                throw new Error('Contact retrieval failed. Please try again later.');
+            }
+
+            const result = await response.json();
+            document.getElementById('contactOutput').textContent = JSON.stringify(result, null, 2);
+        } catch (error) {
+            document.getElementById('contactOutput').textContent = error.message;
+        }
+    });
+</script>

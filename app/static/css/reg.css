@@ -1,0 +1,67 @@
+/* profile.css */
+
+body {
+    font-family: ubuntu, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    width: 100vw
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.profile-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.profile-card {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.profile-info strong {
+    color: #333;
+}
+
+.back-home-btn {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.back-home-btn:hover {
+    background-color: #0056b3;
+}

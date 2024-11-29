@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - IFDeS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <!-- Chat Section -->
+    <section class="chat-section">
+        <div class="chat-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h2>Investment Assistant</h2>
+                <p>Welcome, <strong>{{ username }}</strong>!</p> <!-- Display username -->
+            </div>
+
+            <!-- Chat Body -->
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <span>Welcome to the Investment Assistant! Let’s discuss your investment platform. 😊</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Footer -->
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Type your message here..." autocomplete="off">
+                <button class="chat-send-button" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToBottom() {
+            const chatBody = document.getElementById("chatBody");
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const chatInput = document.getElementById("chatInput");
+            const chatBody = document.getElementById("chatBody");
+    
+            // Event listener for Enter key
+            chatInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    sendMessage();
+                }
+            });
+    
+            async function sendMessage() {
+                const userMessage = chatInput.value.trim();
+    
+                if (userMessage) {
+                    // Append user message
+                    const userMessageDiv = document.createElement("div");
+                    userMessageDiv.className = "message user-message";
+                    userMessageDiv.innerHTML = `<div class="message-content"><span>${userMessage}</span></div>`;
+                    chatBody.appendChild(userMessageDiv);
+    
+                    // Clear input and scroll
+                    chatInput.value = "";
+                    scrollToBottom();
+    
+                    // Show bot typing indicator
+                    const botMessageDiv = document.createElement("div");
+                    botMessageDiv.className = "message bot-message";
+                    const messageContent = document.createElement("div");
+                    messageContent.className = "message-content";
+                    botMessageDiv.appendChild(messageContent);
+                    chatBody.appendChild(botMessageDiv);
+    
+                    try {
+                        // Fetch bot response
+                        const response = await fetch("/chat/send", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ user_id: "guest", message: userMessage }),
+                        });
+    
+                        const data = await response.json();
+    
+                        // Animate typing with simultaneous scrolling
+                        await animateTypingWithScroll(messageContent, data.response);
+    
+                    } catch (error) {
+                        console.error("Error:", error);
+                        messageContent.innerHTML = `<span>Oops! Something went wrong. Try again.</span>`;
+                    }
+    
+                    // Final scroll after message is complete
+                    scrollToBottom();
+                }
+            }
+    
+            async function animateTypingWithScroll(container, text) {
+                for (let i = 0; i < text.length; i++) {
+                    container.innerHTML = `<span>${text.substring(0, i + 1)}</span>`;
+                    scrollToBottom(); // Scroll to bottom with each character
+                    await new Promise(resolve => setTimeout(resolve, 5)); // Adjust speed by changing delay
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

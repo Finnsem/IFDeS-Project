@@ -1,0 +1,168 @@
+/* Reset and Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #f7f9fc;
+}
+
+/* Profile Section Layout */
+.profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px;
+    gap: 50px;
+}
+
+/* Left Side - User Info */
+.profile-left {
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    background: linear-gradient(135deg, #09005c, #0012b3);
+    border-radius: 15px;
+    color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar */
+.avatar-container {
+    font-size: 120px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Welcome and Subtitle */
+.profile-left h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Right Side - Details Section */
+.profile-right {
+    flex: 2;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.profile-right h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: #f7f9fc;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-item i {
+    font-size: 24px;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.info-item strong {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Buttons */
+.action-buttons {
+    margin-top: 20px;
+}
+
+.btn-primary,
+.btn-danger {
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-left,
+    .profile-right {
+        max-width: 100%;
+    }
+
+    .action-buttons {
+        text-align: center;
+    }
+
+    .btn-primary,
+    .btn-danger {
+        max-width: none;
+        width: 80%;
+    }
+}

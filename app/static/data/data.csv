@@ -1,0 +1,69 @@
+Company,IsRegistered,YearsInOperation,HighReturns,TransparentBusinessModel,AccessibleManagement,ClearTerms,EasyWithdrawal,RequiresRecruitment,ThirdPartyReviews,UnsolicitedOffers,ProfessionalWebsite,EncouragesSecrecy,Flag
+Company A,Yes,3,No,Yes,Yes,Yes,Yes,No,Yes,No,Yes,No,Green
+Company B,No,1,Yes,No,No,No,No,Yes,No,Yes,No,Yes,Red
+Company C,Not Sure,2,Yes,No,No,No,No,Yes,Mixed,Yes,No,Yes,Yellow
+Company D,Yes,5,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company E,No,Less than 1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company F,Yes,10,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company G,Not Sure,4,Yes,No,Yes,No,Yes,Yes,Mixed,Yes,Yes,Yes,Yellow
+Company H,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company I,Yes,7,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company J,No,1,Yes,No,No,No,No,Yes,No,Yes,No,Yes,Red
+Company K,Yes,15,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company L,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company M,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company N,Yes,8,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company O,Not Sure,2,Yes,No,Yes,No,No,Mixed,Yes,No,Yes,Yellow
+Company P,Yes,12,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company Q,No,Less than 1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company R,Yes,5,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company S,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company T,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company U,Yes,6,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company V,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company W,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company X,Yes,7,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company Y,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company Z,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AA,Yes,8,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AB,Not Sure,5,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AC,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AD,Yes,9,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AE,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AF,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AG,Yes,10,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AH,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AI,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AJ,Yes,15,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AK,Not Sure,2,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AL,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AM,Yes,12,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AN,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AO,No,Less than 1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AP,Yes,5,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AQ,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AR,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AS,Yes,6,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AT,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AU,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AV,Yes,7,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AW,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company AX,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company AY,Yes,8,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company AZ,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company BA,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company BB,Yes,10,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company BC,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company BD,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company BE,Yes,12,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company BF,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company BG,No,Less than 1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company BH,Yes,5,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company BI,Not Sure,4,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company BJ,No,2,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company BK,Yes,7,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company BL,Not Sure,3,Yes,No,No,No,Yes,Yes,Mixed,Yes,No,Yes,Yellow
+Company BM,No,1,Yes,No,No,No,No,Yes,Negative,Yes,No,Yes,Red
+Company BN,Yes,8,No,Yes,Yes,Yes,Yes,No,Positive,No,Yes,No,Green
+Company BO,Not Sure,4,Yes,No,No,No,
+

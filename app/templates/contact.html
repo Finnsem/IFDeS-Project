@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - IFDeS{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  
+    <div class="contact-content">
+        <div class="contact-content__container">
+            <h1 class="contact-content__title">Contact Us</h1>
+            
+            <div class="contact-content__info">
+                <div class="contact-content__card">
+                    <img src="static/images/email.png" alt="Email">
+                    <h3>Email</h3>
+                    <p>admin@ifdes.my</p>
+                </div>
+                
+                <div class="contact-content__card">
+                    <img src="static/images/phone.png" alt="Phone">
+                    <h3>Phone</h3>
+                    <p>019 - 936 9617</p>
+                </div>
+                
+                <div class="contact-content__card">
+                    <img src="static/images/pin.png" alt="Address">
+                    <h3>Address</h3>
+                    <p>admin@ifdes.my</p>
+                </div>
+            </div>
+        </div>
+
+        <form action="{{ url_for('main.submit') }}" method="POST">
+            <div class="contact-form">
+                <h2>Need help?</h2>
+                <p>Have questions about our platform? We're here to assist you. Please fill out the form below, and a member of our team will respond promptly.</p>
+        
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Fill Your Name here" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Fill Your Email here" required>
+                    </div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="inquiry-type">Inquiry Type</label>
+                        <select id="inquiry-type" name="inquiry_type" required>
+                            <option value="">Select</option>
+                            <option value="General">General</option>
+                            <option value="Report">Report</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write a message for us..." required></textarea>
+                    </div>
+                </div>
+        
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        
+        {% endblock %}

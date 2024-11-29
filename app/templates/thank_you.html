@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - IFDeS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+    
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Your inquiry has been successfully submitted.</p>
+        <p>We appreciate your interest in IFDeS, and our team will get back to you as soon as possible.</p>
+        <a href="{{ url_for('main.index') }}" class="btn-back">Back to Home</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Footer -->
+    
+</body>
+
+
+</html>

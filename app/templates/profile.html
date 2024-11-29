@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - IFDeS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-left">
+            <div class="avatar-container">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h2>Welcome, {{ user.username }}</h2>
+            <p class="subtitle">Your personalized space</p>
+        </div>
+
+        <div class="profile-right">
+            <h3>User Information</h3>
+            <div class="info-block">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <p><strong>Username:</strong> {{ user.username }}</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-coins"></i>
+                    <p><strong>Search Credits:</strong> {{ user.search_credits }}</p>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="{{ url_for('main.index') }}" class="btn-primary">Back to Home</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn-danger">Logout</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

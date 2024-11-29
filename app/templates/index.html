@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - IFDeS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/high-flag.png') }}">
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+    
+    <!-- Main Content -->
+    
+   
+    
+    
+    <!-- Home Content -->
+    <div class="home-content">
+        <div class="home-content__container">
+            <h1 class="home-content__title">Find a Fraud</h1>
+            <p class="home-content__description">Identify and analyze potential investment risks with our AI-driven fraud detection tool. Gain real-time insights and stay informed about suspicious activities, ensuring your investments remain safe and secure.</p>
+            
+            <!-- Search Bar -->
+            <div class="home-content__search-bar">
+                <form id="searchForm">
+                    <input type="text" class="home-content__input" placeholder="Let's Find Something..." name="company_name" id="company_name" autocomplete="off" onkeyup="searchSuggestions(this.value)">
+                    <div id="suggestions"></div> <!-- Where suggestions will be displayed -->
+                    <button type="submit" class="home-content__button"><img src="{{ url_for('static', filename='images/search.png') }}" alt="Search"></button>
+                </form>
+            </div>
+
+            <!-- Loading Bar -->
+            <div id="loadingBarContainer" class="loading-bar-container" style="display: none;">
+                <div id="loadingBar" class="loading-bar"></div>
+                <div id="loadingPercentage" class="loading-percentage">0%</div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="home-content__result-section" id="resultSection">
+                <div class="home-content__result-header">
+                    <span>Company Name / Entity</span>
+                    <span>Remarks</span>
+                    <span>Years</span>
+                </div>
+                <div class="home-content__result-item" id="resultItem">
+                    <!-- Results will be inserted here -->
+                </div>
+            </div>
+
+            <!-- AI Analysis Section -->
+            <div class="ai-analysis-section" id="aiAnalysisSection">
+                <div class="ai-analysis">
+                    <h2>AI Analysis</h2>
+                    <p id="aiAnalysis">Here is the part where GPT prompt output will be displayed</p>
+                    <div id="flag-container"></div> 
+                    <div class="ai-powered">
+                        <span>Powered by GPT-4</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is IFDeS, and how does it work?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IFDeS (Investment Fraud Detection System) is an AI-powered tool designed to help users identify and analyze potential investment frauds. By collecting and processing data from various sources like regulatory databases, news articles, and social media, IFDeS provides real-time insights and risk assessments, helping you make informed investment decisions.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How reliable is the fraud detection analysis provided by IFDeS?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IFDeS uses advanced machine learning algorithms and natural language processing to analyze data from trusted sources. While the system is designed to provide accurate and timely risk assessments, we recommend users cross-reference the results with additional research or consult a financial advisor before making any investment decisions.</p>
+                    </div>
+                </div>
+                <!-- More FAQ items follow... -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How frequently is the data updated in IFDeS?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The data in IFDeS is updated in real-time by continuously pulling information from regulatory databases, news sources, and social media. This ensures that the risk assessments and fraud detection analysis are based on the most current information available.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is IFDeS suitable for non-professional investors?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, IFDeS is designed to be user-friendly and accessible to both professional and non-professional investors. The system provides clear and concise explanations and risk assessments, allowing users with varying levels of investment knowledge to benefit from its insights.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can IFDeS be integrated with other investment platforms?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, IFDeS operates as a standalone tool. However, future updates may include API integration capabilities, allowing users to connect IFDeS with other investment platforms for a more seamless experience.</p>
+                    </div>
+                </div>
+                <!-- New FAQ items -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What kind of data does IFDeS analyze to detect fraud?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IFDeS analyzes a wide range of data sources, including regulatory databases, news articles, social media, and user-reported incidents. By aggregating information from these trusted sources, the system provides comprehensive risk assessments and identifies potential fraudulent activities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I report suspicious activity to IFDeS?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you come across any suspicious activity or believe you've identified potential investment fraud, you can use the report function on the IFDeS platform. Simply provide the relevant details, and our team will review the information and update our analysis accordingly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my personal information safe when using IFDeS?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, IFDeS takes data privacy seriously. All personal information is encrypted and stored securely. We follow industry best practices to ensure that your data remains confidential and is only used for providing fraud detection services.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Script -->
+            <script>
+                document.querySelectorAll('.faq-question').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const answer = item.nextElementSibling;
+                        if (answer.style.display === "block") {
+                            answer.style.display = "none";
+                        } else {
+                            document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = "none");
+                            answer.style.display = "block";
+                        }
+                    });
+                });
+
+                document.addEventListener('DOMContentLoaded', () => {
+        const profileDropdownButton = document.getElementById('profileDropdownButton');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profileDropdownButton.addEventListener('click', () => {
+            profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!profileDropdown.contains(event.target) && event.target !== profileDropdownButton) {
+                profileDropdown.style.display = 'none';
+            }
+        });
+    });
+            </script>
+        </div>
+    </div>
+
+   
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

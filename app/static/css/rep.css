@@ -1,0 +1,144 @@
+body,html {
+    font-family: ubuntu;
+    padding: 0;
+    margin: 0;
+    background-color: #E5E4FF;
+    gap: 20px;
+    width: 100vw;
+}
+
+.contact-content__title {
+    padding: 100px;
+    font-size: 25px;
+    color: #273469;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #F4F4F9;
+}
+
+.container {
+    width: 100vw;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: #E5E4FF;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color: #d94a4a;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+
+.mkn {
+    background-color: #E5E4FF;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.form-group2{
+    padding:50px
+}
+p{
+    text-align: center;
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company-table thead {
+    background-color: #e4eaf2;
+}
+
+.company-table th, .company-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.company-table th {
+    font-weight: bold;
+    color: #555;
+}
+
+.remarks {
+    font-style: italic;
+    color: #666;
+}
+
+.company-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Initially hidden */
+    background-color: #100036;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
